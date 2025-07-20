@@ -1,0 +1,10 @@
+{
+  "name": "TOW Combat Calc",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Gernot Reichling",
+  "description": "A Warhammer The Old World Combat Result Calculator",
+  "scripts": {
+    "start": "ui5 serve -o index.html"
+  }
+}

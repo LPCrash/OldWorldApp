@@ -1,0 +1,76 @@
+<mvc:View
+	controllerName="zgr.combatcalc.App"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:tnt="sap.tnt">
+	<App id="app">
+		<Page title="TOW Combat Result Calculator">
+			<List
+				headerText="Calculate Combat Result">
+				<!-- Unsaved wounds inflicted - 1 point each -->
+				<InputListItem label="Unsaved wounds inflicted" class="sapUiTinyMarginBottom">
+					<StepInput id="idUnsavedWoundsAttacker" width="125px"/>
+					<Text renderWhitespace="true" text=" "/>
+					<StepInput id="idUnsavedWoundsDefender" width="125px"/>
+				</InputListItem>
+
+				<!-- Rank bonus - +1 per rank -->
+				<InputListItem label="Rank Bonus" class="sapUiTinyMarginBottom">
+					<StepInput id="idRankAttacker" width="125px"/>
+					<Text renderWhitespace="true" text=" "/>
+					<StepInput id="idRankDefender" width="125px"/>
+				</InputListItem>
+
+				<!-- Standard +1 -->
+				<InputListItem label="Standard" class="sapUiTinyMarginBottom">
+					<Switch id="idStandardAttacker" customTextOn="J" customTextOff="N"/>
+					<Switch id="idStandardDefender" customTextOn="J" customTextOff="N"/>
+				</InputListItem>
+
+				<!-- Battle Standard +1 -->
+				<InputListItem label="BattleStandard" class="sapUiTinyMarginBottom">
+					<Switch id="idBattleStandardAttacker" customTextOn="J" customTextOff="N"/>
+					<Switch id="idBattleStandardDefender" customTextOn="J" customTextOff="N"/>
+				</InputListItem>
+
+				<!-- Flank Attack +1 -->
+				<InputListItem label="Flank Attack" class="sapUiTinyMarginBottom">
+					<Switch id="idFlankAttacker" customTextOn="J" customTextOff="N"/>
+					<Switch id="idFlankDefender" customTextOn="J" customTextOff="N"/>
+				</InputListItem>
+
+				<!-- Rear Attack +2 -->
+				<InputListItem label="Rear Attack" class="sapUiTinyMarginBottom">
+					<Switch id="idRearAttacker" customTextOn="J" customTextOff="N"/>
+					<Switch id="idRearDefender" customTextOn="J" customTextOff="N"/>
+				</InputListItem>
+
+				<!-- High Ground +1 -->
+				<InputListItem label="High Ground" class="sapUiTinyMarginBottom">
+					<Switch id="idHighGroundAttacker" customTextOn="J" customTextOff="N"/>
+					<Switch id="idHighGroundDefender" customTextOn="J" customTextOff="N"/>
+				</InputListItem>
+
+				<!-- Overkill +1 per excess wound -->
+				<InputListItem label="Overkill" class="sapUiTinyMarginBottom">
+					<StepInput id="idOverkillAttacker" width="125px"/>
+					<StepInput id="idOverkillDefender" width="125px"/>
+				</InputListItem>
+
+				<!-- Other -->
+				<InputListItem label="Others" class="sapUiTinyMarginBottom">
+					<StepInput id="idOthersAttacker" width="125px"/>
+					<StepInput id="idOthersDefender" width="125px"/>
+				</InputListItem>
+
+				<!-- Calculate -->
+				<InputListItem label="" class="sapUiTinyMarginBottom">
+					<Button id="idButtonCalc" text="Calculate Combat Result" icon="sap-icon://simulate" press="onButtonCalcPressed"/>
+				</InputListItem>
+			</List>
+		</Page>
+	</App>
+</mvc:View>
