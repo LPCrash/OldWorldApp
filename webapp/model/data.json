@@ -1,0 +1,22 @@
+{
+    "unsavedWoundsAttacker": "5",
+    "unsavedWoundsDefender": "0",
+    "rankAttacker": "false",
+    "rankDefender": "false",
+    "standardAttacker": "false",
+    "standardDefender": "false",
+    "battleStandardAttacker": "false",
+    "battleStandardDefender": "false",
+    "flankAttacker": "false",
+    "flankDefender": "false",
+    "rearAttacker": "false",
+    "rearDefender": "false",
+    "highGroundAttacker": "false",
+    "highGroundDefender": "false",
+    "overkillAttacker": "0",
+    "overkillDefender": "0",
+    "othersAttacker": "0",
+    "othersDefender": "0",
+    "leadershipLoser": "0",
+    "breaktestDiceroll": "0"
+}

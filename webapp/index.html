@@ -5,14 +5,12 @@
 	<title>TOW Combat Calculator</title>
 	<script id="sap-ui-bootstrap"
 		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
-		data-sap-ui-libs="sap.m, sap.ui.layout, sap.tnt"
 		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-on-init="module:zgr/combatcalc/index"
-		data-sap-ui-resource-roots='{
-			"zgr.combatcalc": "./"
-		}'>
+		data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
+		data-sap-ui-resource-roots='{"zgr.combatcalc": "./"}'>
 	</script>
 </head>
 <body class="sapUiBody" id="content"></body>
+	<div data-sap-ui-component data-name="zgr.combatcalc" data-id="container" data-settings='{"id" : "combatcalc"}'></div>
 </html>
