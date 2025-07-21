@@ -1,22 +1,44 @@
 {
-    "unsavedWoundsAttacker": "5",
-    "unsavedWoundsDefender": "0",
-    "rankAttacker": "false",
-    "rankDefender": "false",
-    "standardAttacker": "false",
-    "standardDefender": "false",
-    "battleStandardAttacker": "false",
-    "battleStandardDefender": "false",
-    "flankAttacker": "false",
-    "flankDefender": "false",
-    "rearAttacker": "false",
-    "rearDefender": "false",
-    "highGroundAttacker": "false",
-    "highGroundDefender": "false",
-    "overkillAttacker": "0",
-    "overkillDefender": "0",
-    "othersAttacker": "0",
-    "othersDefender": "0",
-    "leadershipLoser": "0",
-    "breaktestDiceroll": "0"
+	"unsavedWoundsAttacker": 0,
+	"unsavedWoundsDefender": 0,
+	"unsavedWoundsDiff": 0,
+
+	"rankBonusAttacker": 0,
+	"rankBonusDefender": 0,
+	"rankBonusDiff": 0,
+
+	"standardAttacker": false,
+	"standardDefender": false,
+	"standardDiff": 0,
+
+	"battleStandardAttacker": false,
+	"battleStandardDefender": false,
+	"battleStandardDiff": 0,
+
+	"flankAttacker": false,
+	"flankDefender": false,
+	"flankDiff": 0,
+
+	"rearAttacker": false,
+	"rearDefender": false,
+	"rearDiff": 0,
+
+	"highGroundAttacker": false,
+	"highGroundDefender": false,
+	"highGroundDiff": 0,
+
+	"overkillAttacker": 0,
+	"overkillDefender": 0,
+	"overkillDiff": 0,
+
+	"othersAttacker": 0,
+	"othersDefender": 0,
+	"othersDiff": 0,
+
+	"combatResult": 0,
+
+	"leadershipLoser": 0,
+	"breaktestNaturalDiceroll": 0,
+	"breaktestModifiedDiceroll": 0,
+	"unbreakable": false
 }

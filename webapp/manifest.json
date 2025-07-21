@@ -1,49 +1,53 @@
 {
-  "_version": "1.60.0",
-  "sap.app": {
-    "id": "zgr.towcombatcalc",
-    "title": "TOW CombatCalc",
-    "type": "application",
-    "applicationVersion": {
-      "version": "0.1.0"
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "handleValidation": true,
-    "dependencies": {
-      "minUI5Version": "1.120.0",
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {},
-        "sap.ui.layout": {}
-      }
-    },
-    "models": {
-      "": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "./model/data.json"
-      },
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "zgr.combatcalc.i18n.i18n",
-          "supportedLocales": ["", "de"],
-          "fallbackLocale": ""
-        }
-      }
-    },
-    "rootView": {
-      "viewName": "zgr.combatcalc.view.App",
-      "type": "XML",
-      "id": "app"
-    }
-  }
+	"_version": "1.60.0",
+	"sap.app": {
+		"id": "zgr.towcombatcalc",
+		"title": "TOW CombatCalc",
+		"type": "application",
+		"applicationVersion": {
+			"version": "0.1.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"handleValidation": true,
+		"contentDensities": {
+			"compact": true,
+			"cozy": false
+		},
+		"dependencies": {
+			"minUI5Version": "1.120.0",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"models": {
+			"": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "./model/data.json"
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "zgr.combatcalc.i18n.i18n",
+					"supportedLocales": ["", "de"],
+					"fallbackLocale": ""
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "zgr.combatcalc.view.App",
+			"type": "XML",
+			"id": "app"
+		}
+	}
 }
