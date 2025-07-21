@@ -130,6 +130,8 @@ sap.ui.define(
 				// but the modified result is higher than the unit's Leadership, the unit Falls Back in Good Order.
 				// If the modified result is equal to or lower than the unit's Leadership,
 				// or if the roll is a natural double 1, the unit Gives Ground.
+				//
+				// TODO Stubborn
 				if (
 					oData.breaktestNaturalDiceroll > oData.leadershipLoser &&
 					oData.breaktestNaturalDiceroll > 2 &&
