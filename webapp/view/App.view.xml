@@ -16,11 +16,17 @@
                     >
                         <Title text="{i18n>headerToolbarTitle}" />
                         <ToolbarSpacer />
-                        <Text id="idTextCombatResultHeader" text="{i18n>textAtt} | {i18n>textDef}" />
+                        
                     </OverflowToolbar>
                 </headerToolbar>
                 <content>
                     <List id="idListCombatResult">
+                        <headerToolbar>
+			                <OverflowToolbar>
+                                <ToolbarSpacer />
+                                <Text id="idTextCombatResultHeader" text="{i18n>textAtt} | {i18n>textDef}" />
+                            </OverflowToolbar>
+                		</headerToolbar>
                         <!-- Unsaved Wounds -->
                         <InputListItem
                             label="{i18n>unsavedWoundsInflicted}"
@@ -138,6 +144,38 @@
                                 customTextOn="J"
                                 customTextOff="N"
                                 state="{/highGroundDefender}"
+                            />
+                        </InputListItem>
+
+                        <!-- Close Order with Unit Strengh 10+-->
+                        <InputListItem
+                            label="{i18n>closeOrder}"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/closeOrderAttacker}"
+                            />
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/closeOrderDefender}"
+                            />
+                        </InputListItem>
+
+                        <!-- Massed Infantry -->
+                        <InputListItem
+                            label="{i18n>massedInfantry}"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/massedInfantryAttacker}"
+                            />
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/massedInfantryDefender}"
                             />
                         </InputListItem>
 

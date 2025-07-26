@@ -183,6 +183,8 @@ sap.ui.define(
 				oData.rearDiff = 0;
 				oData.highGroundDiff = 0;
 				oData.overkillDiff = 0;
+				oData.closeOrderDiff = 0;
+				oData.massedInfantryDiff = 0;
 				oData.othersDiff = 0;
 
 			},
@@ -196,13 +198,14 @@ sap.ui.define(
 					oData.rankBonusAttacker - oData.rankBonusDefender;
 				oData.overkillDiff =
 					oData.overkillAttacker - oData.overkillDefender;
-				oData.othersDiff = oData.othersAttacker - oData.othersDefender;
 
+				// Standard
 				if (oData.standardAttacker > oData.standardDefender) {
 					oData.standardDiff = 1;
 				} else if (oData.standardAttacker < oData.standardDefender)
 					oData.standardDiff = -1;
 
+				// Battle Standard
 				if (
 					oData.battleStandardAttacker > oData.battleStandardDefender
 				) {
@@ -213,18 +216,21 @@ sap.ui.define(
 					oData.battleStandardDiff = -1;
 				}
 
+				// Flank Attack
 				if (oData.flankAttacker > oData.flankDefender) {
 					oData.flankDiff = 1;
 				} else if (oData.flankAttacker < oData.flankDefender) {
 					oData.flankDiff = -1;
 				}
 
+				// Rear Attack
 				if (oData.rearAttacker > oData.rearDefender) {
 					oData.rearDiff = 2;
 				} else if (oData.rearAttacker < oData.rearDefender) {
 					oData.rearDiff = -2;
 				}
 
+				// High Ground
 				if (oData.highGroundAttacker > oData.highGroundDefender) {
 					oData.highGroundDiff = 1;
 				} else if (
@@ -233,6 +239,29 @@ sap.ui.define(
 					oData.highGroundDiff = -1;
 				}
 
+				// Close Order
+				if (oData.closeOrderAttacker > oData.closeOrderDefender) {
+					oData.closeOrderDiff = 1;
+				} else if (
+					oData.closeOrderAttacker < oData.closeOrderDefender
+				) {
+					oData.othersDiff = -1;
+				}
+
+				// Massed Infantry
+				if (oData.massedInfantryAttacker > oData.massedInfantryDefender) {
+					oData.massedInfantryDiff = 1;
+				} else if (
+					oData.massedInfantryAttacker < oData.massedInfantryDefender
+				) {
+					oData.massedInfantryDiff = -1;
+				}
+
+
+				// Others
+				oData.othersDiff = oData.othersAttacker - oData.othersDefender;
+
+				// Result
 				oData.combatResult =
 					oData.unsavedWoundsDiff +
 					oData.rankBonusDiff +
@@ -242,6 +271,8 @@ sap.ui.define(
 					oData.rearDiff +
 					oData.highGroundDiff +
 					oData.overkillDiff +
+					oData.closeOrderDiff +
+					oData.massedInfantryDiff +
 					oData.othersDiff;
 			},
 

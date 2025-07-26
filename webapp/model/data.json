@@ -31,6 +31,14 @@
 	"overkillDefender": 0,
 	"overkillDiff": 0,
 
+	"massedInfantryAttacker": false,
+	"massedInfantryDefender": false,
+	"massedInfantryDiff": 0,
+
+	"closeOrderAttacker": false,
+	"closeOrderDefender": false,
+	"closeOrderDiff": 0,
+
 	"othersAttacker": 0,
 	"othersDefender": 0,
 	"othersDiff": 0,
