@@ -19,13 +19,13 @@
                             valueState="None"
                             width="60%"
                         />
-                        <ToolbarSpacer />
+                        <!-- <ToolbarSpacer />
                         <Button
                             id="idButtonCalcCombatResult"
                             text="{i18n>ButtonCalcCombat}"
                             icon="sap-icon://simulate"
                             press="onButtonCalcCombatResultPressed"
-                        />
+                        /> -->
                     </OverflowToolbar>
                 </headerToolbar>
                 <content>
@@ -185,6 +185,19 @@
                                 value="{/othersDefender}"
                             />
                         </InputListItem>
+
+                        <InputListItem
+                            label="{i18n>labelCalcCombatResult}"
+                            class="sapUiTinyMarginBottom"
+                        >
+                            <!-- Button Calc -->
+                           <Button
+                                id="idButtonCalcCombatResult"
+                                text="{i18n>ButtonCalcCombat}"
+                                icon="sap-icon://simulate"
+                                press="onButtonCalcCombatResultPressed"
+                            />
+                        </InputListItem>
                     </List> 
                 </content>
             </Panel>
@@ -201,13 +214,13 @@
                             valueState="None"
                             width="60%"
                         />
-                        <ToolbarSpacer />
+                        <!-- <ToolbarSpacer />
                         <Button
                             id="idButtonCalcBreakTest"
                             text="{i18n>buttonCalcBreaktest}"
                             icon="sap-icon://physical-activity"
                             press="onButtonCalcBreakTestPressed"
-                        />
+                        /> -->
                     </OverflowToolbar>
                 </headerToolbar>
                 <content>
@@ -253,6 +266,19 @@
                                 customTextOn="J"
                                 customTextOff="N"
                                 state="{/stubborn}"
+                            />
+                        </InputListItem>
+
+                        <!-- Button Calc -->
+                        <InputListItem
+                            label="{i18n>labelCalcBreaktest}"
+                            class="sapUiTinyMarginBottom"
+                        >
+                            <Button
+                                id="idButtonCalcBreakTest"
+                                text="{i18n>buttonCalcBreaktest}"
+                                icon="sap-icon://physical-activity"
+                                press="onButtonCalcBreakTestPressed"
                             />
                         </InputListItem>
                     </List>
