@@ -16,29 +16,11 @@
                     >
                         <Title text="{i18n>headerToolbarTitle}" />
                         <ToolbarSpacer />
-                        <!-- <Input
-                            id="idInputCombatResult"
-                            visible="false"
-                            valueState="None"
-                            width="60%"
-                        />
-                        <ToolbarSpacer /> -->
-                        <Text text="{i18n>textAtt} | {i18n>textDef}" />
-                        <!-- 
-                        <Button
-                            id="idButtonCalcCombatResult"
-                            text="{i18n>ButtonCalcCombat}"
-                            icon="sap-icon://simulate"
-                            press="onButtonCalcCombatResultPressed"
-                        /> -->
+                        <Text id="idTextCombatResultHeader" text="{i18n>textAtt} | {i18n>textDef}" />
                     </OverflowToolbar>
                 </headerToolbar>
                 <content>
                     <List id="idListCombatResult">
-                        <!-- <InputListItem>
-                            <Text text="{i18n>textAtt} | {i18n>textDef}" />
-                        </InputListItem> -->
-
                         <!-- Unsaved Wounds -->
                         <InputListItem
                             label="{i18n>unsavedWoundsInflicted}"
@@ -223,19 +205,6 @@
                     >
                         <Title text="{i18n>headerToolbarBreaktestTitle}" />
                         <ToolbarSpacer />
-                        <!--<Input
-                            id="idInputBreakTest"
-                            visible="false"
-                            valueState="None"
-                            width="60%"
-                        /> -->
-                        <!-- <ToolbarSpacer />
-                        <Button
-                            id="idButtonCalcBreakTest"
-                            text="{i18n>buttonCalcBreaktest}"
-                            icon="sap-icon://physical-activity"
-                            press="onButtonCalcBreakTestPressed"
-                        /> -->
                     </OverflowToolbar>
                 </headerToolbar>
                 <content>
@@ -318,6 +287,12 @@
                         id="idStatusBreakTest"
                         visible="false"
                         inverted="true"
+                    />
+                    <ToolbarSpacer />
+                    <Button
+                        icon="sap-icon://reset"
+                        text="{i18n>ButtonClear}"
+                        press="onButtonClearPressed"
                     />
                 </OverflowToolbar>
             </footer>

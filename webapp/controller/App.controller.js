@@ -38,26 +38,9 @@ sap.ui.define(
 
 			onButtonCalcCombatResultPressed(oEvent) {
 				var oData = this.getView().getModel().getData();
-
-				// Reset data before calculating result
-				this.resetInputData(oData);
-				this.byId("idInputCombatResult").setValueState("None");
-				this.byId("idInputCombatResult").setValue("");
-
-				// Calculate Combat Result
 				this.calculateCombatResult(oData);
 
 				if (oData.combatResult === 0) {
-					// this.byId("idInputCombatResult").setValueState(
-					// 	"Information"
-					// );
-					// this.byId("idInputCombatResult").setValue(
-					// 	this.getView()
-					// 		.getModel("i18n")
-					// 		.getResourceBundle()
-					// 		.getText("placeholderDraw")
-					// );
-
 					this.byId("idStatusCombatResult").setState(
 						"Information"
 					);
@@ -70,16 +53,6 @@ sap.ui.define(
 				}
 
 				else if (oData.combatResult > 0) {
-					// this.byId("idInputCombatResult").setValueState("Success");
-					// this.byId("idInputCombatResult").setValue(
-					// 	this.getView()
-					// 		.getModel("i18n")
-					// 		.getResourceBundle()
-					// 		.getText("placeholderWin") +
-					// 		": +" +
-					// 		oData.combatResult
-					// );
-
 					this.byId("idStatusCombatResult").setState("Success");
 					this.byId("idStatusCombatResult").setText(
 						this.getView()
@@ -90,16 +63,6 @@ sap.ui.define(
 							oData.combatResult
 					);
 				} else {
-					// this.byId("idInputCombatResult").setValueState("Error");
-					// this.byId("idInputCombatResult").setValue(
-					// 	this.getView()
-					// 		.getModel("i18n")
-					// 		.getResourceBundle()
-					// 		.getText("placeholderLoss") +
-					// 		": " +
-					// 		oData.combatResult
-					// );
-
 					this.byId("idStatusCombatResult").setState("Error");
 					this.byId("idStatusCombatResult").setText(
 						this.getView()
@@ -111,7 +74,6 @@ sap.ui.define(
 					);
 				}
 
-				//this.byId("idInputCombatResult").setVisible(true);
 				this.byId("idStatusCombatResult").setVisible(true);
 
 				if (oData.combatResult !== 0) {
@@ -129,14 +91,6 @@ sap.ui.define(
 				var oBreakTestResult = this.calculateBreaktest(oData);
 				switch(oBreakTestResult) {
 					case "Flee":
-						// this.byId("idInputBreakTest").setValueState("Error");
-						// this.byId("idInputBreakTest").setValue(
-						// 	this.getView()
-						// 		.getModel("i18n")
-						// 		.getResourceBundle()
-						// 		.getText("placeholderFlee")
-						// );
-
 						this.byId("idStatusBreakTest").setState("Error");
 						this.byId("idStatusBreakTest").setText(
 							this.getView()
@@ -147,14 +101,6 @@ sap.ui.define(
 						break;
 
 					case "FBiGO":
-						// this.byId("idInputBreakTest").setValueState("Warning");
-						// this.byId("idInputBreakTest").setValue(
-						// 	this.getView()
-						// 		.getModel("i18n")
-						// 		.getResourceBundle()
-						// 		.getText("placeholderFallBack")
-						// );
-
 						this.byId("idStatusBreakTest").setState("Warning");
 						this.byId("idStatusBreakTest").setText(
 							this.getView()
@@ -166,16 +112,6 @@ sap.ui.define(
 					
 					// Give Ground
 					default:
-						// this.byId("idInputBreakTest").setValueState(
-						// 	"Information"
-						// );
-						// this.byId("idInputBreakTest").setValue(
-						// 	this.getView()
-						// 		.getModel("i18n")
-						// 		.getResourceBundle()
-						// 		.getText("placeholderGiveGround")
-						// );
-
 						this.byId("idStatusBreakTest").setState(
 							"Information"
 						);
@@ -196,9 +132,11 @@ sap.ui.define(
 				
 				if(oExpend) {
 					this.byId("idPanelBreaktest").setExpanded(false);
+					// this.byId("idTextCombatResultHeader").setVisible(true);
 				}
 				else {
 					this.byId("idPanelBreaktest").setExpanded(true);
+					// this.byId("idTextCombatResultHeader").setVisible(false);
 				}
 
 			},
@@ -208,14 +146,35 @@ sap.ui.define(
 				
 				if(!oExpend) {
 					this.byId("idPanelCombatResult").setExpanded(true);
+					// this.byId("idTextCombatResultHeader").setVisible(false);
 				}
 				else {
 					this.byId("idPanelCombatResult").setExpanded(false);
+					// this.byId("idTextCombatResultHeader").setVisible(true);
 				}
 
 			},
 
-			resetInputData(oData) {
+			onButtonClearPressed(oEvent) {
+				var oModel = new JSONModel("./model/data.json");
+				this.getView().setModel(oModel);
+
+				// Clear Status Tags
+				this.byId("idStatusCombatResult").setState("None");
+				this.byId("idStatusCombatResult").setText("");
+				this.byId("idStatusCombatResult").setVisible(false);
+
+				this.byId("idStatusBreakTest").setState("None");
+				this.byId("idStatusBreakTest").setText("");
+				this.byId("idStatusBreakTest").setVisible(false);
+
+				// Show Starting Panels
+				this.byId("idPanelCombatResult").setExpanded(true);
+				//this.byId("idTextCombatResultHeader").setVisible(true);
+				this.byId("idPanelBreaktest").setExpanded(false);
+			},
+
+			resetDiffCalculation(oData) {
 				oData.unsavedWoundsDiff = 0;
 				oData.rankBonusDiff = 0;
 				oData.standardDiff = 0;
@@ -225,9 +184,12 @@ sap.ui.define(
 				oData.highGroundDiff = 0;
 				oData.overkillDiff = 0;
 				oData.othersDiff = 0;
+
 			},
 
 			calculateCombatResult(oData) {
+				this.resetDiffCalculation(oData);
+
 				oData.unsavedWoundsDiff =
 					oData.unsavedWoundsAttacker - oData.unsavedWoundsDefender;
 				oData.rankBonusDiff =
