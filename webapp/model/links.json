@@ -1,0 +1,12 @@
+{
+    "combatResultTable":    "https://tow.whfb.app/the-combat-phase/combat-result-table",
+    "unsavedWounds":        "https://tow.whfb.app/the-combat-phase/unsaved-wounds-inflicted",
+    "rankBonus":            "https://tow.whfb.app/the-combat-phase/rank-bonus",
+    "standards":            "https://tow.whfb.app/the-combat-phase/standards",
+    "flankRearAttacks":     "https://tow.whfb.app/the-combat-phase/flank-and-rear-attacks",
+    "highGround":           "https://tow.whfb.app/the-combat-phase/the-high-ground",
+    "overkill":             "https://tow.whfb.app/the-combat-phase/overkill-combat",
+    "other":                "https://tow.whfb.app/the-combat-phase/other-bonuses",
+    "massedInfantry":       "https://tow.whfb.app/troop-types-in-detail/massed-infantry",
+    "stubborn":             "https://tow.whfb.app/special-rules/stubborn"
+}

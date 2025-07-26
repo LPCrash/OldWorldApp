@@ -35,6 +35,10 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "./model/data.json"
 			},
+			"links": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "./model/links.json"
+			},
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {

@@ -3,254 +3,261 @@
     displayBlock="true"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
-    xmlns:tnt="sap.tnt"
 >
     <App id="app">
         <Page title="{i18n>pageTitel}">
-            <List id="idListCombatResult">
+            <Panel id="idPanelCombatResult"  expandable="true" expanded="true" width="auto" class="sapUiResponsiveMargin"
+                expand="onPanelCombatResultExpand">
                 <headerToolbar>
                     <OverflowToolbar>
                         <Title text="{i18n>headerToolbarTitle}" />
                         <ToolbarSpacer />
-                        <Text text="{i18n>textAtt} | {i18n>textDef}" />
+                        <Input
+                            id="idInputCombatResult"
+                            visible="false"
+                            valueState="None"
+                            width="60%"
+                        />
+                        <ToolbarSpacer />
+                        <Button
+                            id="idButtonCalcCombatResult"
+                            text="{i18n>ButtonCalcCombat}"
+                            icon="sap-icon://simulate"
+                            press="onButtonCalcCombatResultPressed"
+                        />
                     </OverflowToolbar>
                 </headerToolbar>
+                <content>
+                    <List id="idListCombatResult">
+                        <InputListItem>
+                            <Text text="{i18n>textAtt} | {i18n>textDef}" />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>unsavedWoundsInflicted}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/unsavedWoundsAttacker}"
-                    />
-                    <Text
-                        renderWhitespace="true"
-                        text=" "
-                    />
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/unsavedWoundsDefender}"
-                    />
-                </InputListItem>
+                        <!-- Unsaved Wounds -->
+                        <InputListItem
+                            label="{i18n>unsavedWoundsInflicted}"
+                        >
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/unsavedWoundsAttacker}"
+                            />
+                            <Text
+                                renderWhitespace="true"
+                                text=" "
+                            />
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/unsavedWoundsDefender}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>rankBonus}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/rankBonusAttacker}"
-                    />
-                    <Text
-                        renderWhitespace="true"
-                        text=" "
-                    />
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/rankBonusDefender}"
-                    />
-                </InputListItem>
+                        <!-- Rank Bonus -->
+                        <InputListItem
+                            label="{i18n>rankBonus}"
+                        >
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/rankBonusAttacker}"
+                            />
+                            <Text
+                                renderWhitespace="true"
+                                text=" "
+                            />
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/rankBonusDefender}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>standard}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/standardAttacker}"
-                    />
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/standardDefender}"
-                    />
-                </InputListItem>
+                        <!-- Standard -->
+                        <InputListItem
+                            label="{i18n>standard}"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/standardAttacker}"
+                            />
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/standardDefender}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>battleStandard}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/battleStandardAttacker}"
-                    />
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/battleStandardDefender}"
-                    />
-                </InputListItem>
+                        <!-- Battle Standard -->
+                        <InputListItem
+                            label="{i18n>battleStandard}"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/battleStandardAttacker}"
+                            />
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/battleStandardDefender}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>flankAttack}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/flankAttacker}"
-                    />
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/flankDefender}"
-                    />
-                </InputListItem>
+                        <!-- Flank Attack -->
+                        <InputListItem
+                            label="{i18n>flankAttack}"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/flankAttacker}"
+                            />
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/flankDefender}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>rearAttack}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/rearAttacker}"
-                    />
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/rearDefender}"
-                    />
-                </InputListItem>
+                        <!-- Rear Attack -->
+                        <InputListItem
+                            label="{i18n>rearAttack}"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/rearAttacker}"
+                            />
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/rearDefender}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>highGround}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/highGroundAttacker}"
-                    />
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/highGroundDefender}"
-                    />
-                </InputListItem>
+                        <!-- High Ground -->
+                        <InputListItem
+                            label="{i18n>highGround}"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/highGroundAttacker}"
+                            />
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/highGroundDefender}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>overkill}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/overkillAttacker}"
-                    />
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/overkillDefender}"
-                    />
-                </InputListItem>
+                        <!-- Overkill -->
+                        <InputListItem
+                            label="{i18n>overkill}"
+                        >
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/overkillAttacker}"
+                            />
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/overkillDefender}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>others}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/othersAttacker}"
-                    />
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/othersDefender}"
-                    />
-                </InputListItem>
+                        <!-- Other -->
+                        <InputListItem
+                            label="{i18n>others}"
+                        >
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/othersAttacker}"
+                            />
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/othersDefender}"
+                            />
+                        </InputListItem>
+                    </List> 
+                </content>
+            </Panel>
 
-                <InputListItem
-                    label="{i18n>labelCalcCombatResult}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <Input
-                        id="idInputCombatResult"
-                        visible="false"
-                        valueState="None"
-                        width="60%"
-                    />
-                    <Button
-                        id="idButtonCalcCombatResult"
-                        text="{i18n>ButtonCalcCombat}"
-                        icon="sap-icon://simulate"
-                        press="onButtonCalcCombatResultPressed"
-                    />
-                </InputListItem>
-            </List>
-            <List
-                id="idListBreaktest"
-                visible="false"
-            >
+            <Panel id="idPanelBreaktest" expandable="true" width="auto" class="sapUiResponsiveMargin"
+                expand="onPanelBreakTestExpand">
                 <headerToolbar>
                     <OverflowToolbar>
                         <Title text="{i18n>headerToolbarBreaktestTitle}" />
                         <ToolbarSpacer />
-                        <Text text="{i18n>textAtt} | {i18n>textDef}" />
+                        <Input
+                            id="idInputBreakTest"
+                            visible="false"
+                            valueState="None"
+                            width="60%"
+                        />
+                        <ToolbarSpacer />
+                        <Button
+                            id="idButtonCalcBreakTest"
+                            text="{i18n>buttonCalcBreaktest}"
+                            icon="sap-icon://physical-activity"
+                            press="onButtonCalcBreakTestPressed"
+                        />
                     </OverflowToolbar>
                 </headerToolbar>
-                <InputListItem
-                    label="{i18n>leadershipLoser}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/leadershipLoser}"
-                    />
-                </InputListItem>
+                <content>
+                    <!-- Breaktest List -->
+                    <List id="idListBreaktest">
+                        <InputListItem
+                            label="{i18n>leadershipLoser}"
+                        >
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/leadershipLoser}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>breaktestNaturalDiceroll}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <StepInput
-                        min="0"
-                        width="125px"
-                        value="{/breaktestNaturalDiceroll}"
-                    />
-                </InputListItem>
+                        <!-- Dice Roll -->
+                        <InputListItem
+                            label="{i18n>breaktestNaturalDiceroll}"
+                        >
+                            <StepInput
+                                min="0"
+                                width="125px"
+                                value="{/breaktestNaturalDiceroll}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>unbreakable}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <Switch
-                        customTextOn="J"
-                        customTextOff="N"
-                        state="{/unbreakable}"
-                    />
-                </InputListItem>
+                        <!-- Unbreakable -->
+                        <InputListItem
+                            label="{i18n>unbreakable}"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/unbreakable}"
+                            />
+                        </InputListItem>
 
-                <InputListItem
-                    label="{i18n>labelCalcBreaktest}"
-                    class="sapUiTinyMarginBottom"
-                >
-                    <Input
-                        id="idInputBreakTest"
-                        visible="false"
-                        valueState="None"
-                        width="60%"
-                    />
-                    <Button
-                        id="idButtonCalcBreakTest"
-                        text="{i18n>buttonCalcBreaktest}"
-                        icon="sap-icon://physical-activity"
-                        press="onButtonCalcBreakTestPressed"
-                    />
-                </InputListItem>
-            </List>
+                        <!-- Stubborn -->
+                        <InputListItem
+                            label="{i18n>stubborn}"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/stubborn}"
+                            />
+                        </InputListItem>
+                    </List>
+                </content>
+            </Panel>
         </Page>
     </App>
 </mvc:View>
