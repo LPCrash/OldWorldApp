@@ -10,6 +10,32 @@ sap.ui.define(
 		return Controller.extend("zgr.combatcalc.controller.App", {
 			onInit(oEvent) {},
 
+			onOverflowToolbarCombatResultPress(oEvent) {
+				var oExpend = this.byId("idPanelCombatResult").getExpanded();
+
+				if(oExpend) {
+					this.byId("idPanelCombatResult").setExpanded(false);
+					this.byId("idPanelBreaktest").setExpanded(true);
+				}
+				else {
+					this.byId("idPanelCombatResult").setExpanded(true);
+					this.byId("idPanelBreaktest").setExpanded(false);
+				}
+			},
+
+			onOverflowToolbarBreaktestPress(oEvent) {
+				var oExpend = this.byId("idPanelBreaktest").getExpanded();
+
+				if(oExpend) {
+					this.byId("idPanelCombatResult").setExpanded(true);
+					this.byId("idPanelBreaktest").setExpanded(false);
+				}
+				else {
+					this.byId("idPanelCombatResult").setExpanded(false);
+					this.byId("idPanelBreaktest").setExpanded(true);
+				}
+			},
+
 			onButtonCalcCombatResultPressed(oEvent) {
 				var oData = this.getView().getModel().getData();
 

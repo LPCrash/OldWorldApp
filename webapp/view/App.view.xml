@@ -10,7 +10,10 @@
             <Panel id="idPanelCombatResult"  expandable="true" expanded="true" width="auto" class="sapUiResponsiveMargin"
                 expand="onPanelCombatResultExpand">
                 <headerToolbar>
-                    <OverflowToolbar>
+                    <OverflowToolbar
+                        active="true"
+                        press="onOverflowToolbarCombatResultPress"
+                    >
                         <Title text="{i18n>headerToolbarTitle}" />
                         <ToolbarSpacer />
                         <!-- <Input
@@ -214,7 +217,10 @@
             <Panel id="idPanelBreaktest" expandable="true" width="auto" class="sapUiResponsiveMargin"
                 expand="onPanelBreakTestExpand">
                 <headerToolbar>
-                    <OverflowToolbar>
+                    <OverflowToolbar
+                        active="true"
+                        press="onOverflowToolbarBreaktestPress"
+                    >
                         <Title text="{i18n>headerToolbarBreaktestTitle}" />
                         <ToolbarSpacer />
                         <!--<Input
