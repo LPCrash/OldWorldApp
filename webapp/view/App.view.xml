@@ -7,33 +7,34 @@
 >
     <App id="app">
         <Page title="{i18n>pageTitel}">
-            <Panel id="idPanelCombatResult"  expandable="true" expanded="true" width="auto" class="sapUiResponsiveMargin"
+            <Panel id="idPanelCombatResult"  expandable="true" expanded="true" width="auto" 
                 expand="onPanelCombatResultExpand">
                 <headerToolbar>
                     <OverflowToolbar
                         active="true"
                         press="onOverflowToolbarCombatResultPress"
                     >
-                        <Title text="{i18n>headerToolbarTitle}" />
+                        <Text text="{i18n>headerToolbarTitle}"/>
                         <ToolbarSpacer />
                         
                     </OverflowToolbar>
                 </headerToolbar>
+
                 <content>
                     <List id="idListCombatResult">
-                        <headerToolbar>
-			                <OverflowToolbar>
-                                <ToolbarSpacer />
-                                <Text id="idTextCombatResultHeader" text="{i18n>textAtt} | {i18n>textDef}" />
-                            </OverflowToolbar>
-                		</headerToolbar>
+                        <InputListItem>
+                            <Text
+                                text="{i18n>textAtt} | {i18n>textDef}"
+                            />
+                        </InputListItem>
+
                         <!-- Unsaved Wounds -->
                         <InputListItem
                             label="{i18n>unsavedWoundsInflicted}"
                         >
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/unsavedWoundsAttacker}"
                             />
                             <Text
@@ -42,7 +43,7 @@
                             />
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/unsavedWoundsDefender}"
                             />
                         </InputListItem>
@@ -53,7 +54,7 @@
                         >
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/rankBonusAttacker}"
                             />
                             <Text
@@ -62,7 +63,7 @@
                             />
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/rankBonusDefender}"
                             />
                         </InputListItem>
@@ -185,12 +186,16 @@
                         >
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/overkillAttacker}"
+                            />
+                            <Text
+                                renderWhitespace="true"
+                                text=" "
                             />
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/overkillDefender}"
                             />
                         </InputListItem>
@@ -201,24 +206,26 @@
                         >
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/othersAttacker}"
+                            />
+                            <Text
+                                renderWhitespace="true"
+                                text=" "
                             />
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/othersDefender}"
                             />
                         </InputListItem>
 
-                        <InputListItem
-                            label="{i18n>labelCalcCombatResult}"
-                            class="sapUiTinyMarginBottom"
-                        >
-                            <!-- Button Calc -->
+                        <!-- Button Calc -->
+                        <InputListItem label="{i18n>labelCalcCombatResult}">
                            <Button
                                 id="idButtonCalcCombatResult"
                                 text="{i18n>ButtonCalcCombat}"
+                                type="Emphasized"
                                 icon="sap-icon://simulate"
                                 press="onButtonCalcCombatResultPressed"
                             />
@@ -234,7 +241,7 @@
                 </content>
             </Panel>
 
-            <Panel id="idPanelBreaktest" expandable="true" width="auto" class="sapUiResponsiveMargin"
+            <Panel id="idPanelBreaktest" expandable="true" width="auto"
                 expand="onPanelBreakTestExpand">
                 <headerToolbar>
                     <OverflowToolbar
@@ -253,7 +260,7 @@
                         >
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/leadershipLoser}"
                             />
                         </InputListItem>
@@ -264,7 +271,7 @@
                         >
                             <StepInput
                                 min="0"
-                                width="125px"
+                                width="120px"
                                 value="{/breaktestNaturalDiceroll}"
                             />
                         </InputListItem>
@@ -294,11 +301,11 @@
                         <!-- Button Calc -->
                         <InputListItem
                             label="{i18n>labelCalcBreaktest}"
-                            class="sapUiTinyMarginBottom"
                         >
                             <Button
                                 id="idButtonCalcBreakTest"
                                 text="{i18n>buttonCalcBreaktest}"
+                                type="Emphasized"
                                 icon="sap-icon://physical-activity"
                                 press="onButtonCalcBreakTestPressed"
                             />
@@ -328,8 +335,8 @@
                     />
                     <ToolbarSpacer />
                     <Button
-                        icon="sap-icon://reset"
                         text="{i18n>ButtonClear}"
+                        type="Emphasized"
                         press="onButtonClearPressed"
                     />
                 </OverflowToolbar>

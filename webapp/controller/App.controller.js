@@ -121,7 +121,6 @@ sap.ui.define(
 								.getResourceBundle()
 								.getText("placeholderGiveGround")
 						);
-						
 				}
 
 				this.byId("idStatusBreakTest").setVisible(true);
