@@ -13,13 +13,15 @@
                     <OverflowToolbar>
                         <Title text="{i18n>headerToolbarTitle}" />
                         <ToolbarSpacer />
-                        <Input
+                        <!-- <Input
                             id="idInputCombatResult"
                             visible="false"
                             valueState="None"
                             width="60%"
                         />
-                        <!-- <ToolbarSpacer />
+                        <ToolbarSpacer /> -->
+                        <Text text="{i18n>textAtt} | {i18n>textDef}" />
+                        <!-- 
                         <Button
                             id="idButtonCalcCombatResult"
                             text="{i18n>ButtonCalcCombat}"
@@ -30,9 +32,9 @@
                 </headerToolbar>
                 <content>
                     <List id="idListCombatResult">
-                        <InputListItem>
+                        <!-- <InputListItem>
                             <Text text="{i18n>textAtt} | {i18n>textDef}" />
-                        </InputListItem>
+                        </InputListItem> -->
 
                         <!-- Unsaved Wounds -->
                         <InputListItem
@@ -198,7 +200,14 @@
                                 press="onButtonCalcCombatResultPressed"
                             />
                         </InputListItem>
-                    </List> 
+                    </List>
+
+                    <Input
+                        id="idInputCombatResult"
+                        visible="false"
+                        valueState="None"
+                        width="100%"
+                    /> 
                 </content>
             </Panel>
 
@@ -208,12 +217,12 @@
                     <OverflowToolbar>
                         <Title text="{i18n>headerToolbarBreaktestTitle}" />
                         <ToolbarSpacer />
-                        <Input
+                        <!--<Input
                             id="idInputBreakTest"
                             visible="false"
                             valueState="None"
                             width="60%"
-                        />
+                        /> -->
                         <!-- <ToolbarSpacer />
                         <Button
                             id="idButtonCalcBreakTest"
@@ -282,8 +291,30 @@
                             />
                         </InputListItem>
                     </List>
+
+                    <Input
+                        id="idInputBreakTest"
+                        visible="false"
+                        valueState="None"
+                        width="100%"
+                    />
                 </content>
             </Panel>
+            <footer>
+                <OverflowToolbar>
+                    <ObjectStatus
+                        id="idStatusCombatResult"
+                        visible="false"
+                        inverted="true"
+                    />
+                    <ToolbarSpacer />
+                    <ObjectStatus
+                        id="idStatusBreakTest"
+                        visible="false"
+                        inverted="true"
+                    />
+                </OverflowToolbar>
+            </footer>
         </Page>
     </App>
 </mvc:View>

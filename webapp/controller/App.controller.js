@@ -21,19 +21,41 @@ sap.ui.define(
 				// Calculate Combat Result
 				this.calculateCombatResult(oData);
 
-				if (oData.combatResult == 0) {
-					this.byId("idInputCombatResult").setValueState(
+				if (oData.combatResult === 0) {
+					// this.byId("idInputCombatResult").setValueState(
+					// 	"Information"
+					// );
+					// this.byId("idInputCombatResult").setValue(
+					// 	this.getView()
+					// 		.getModel("i18n")
+					// 		.getResourceBundle()
+					// 		.getText("placeholderDraw")
+					// );
+
+					this.byId("idStatusCombatResult").setState(
 						"Information"
 					);
-					this.byId("idInputCombatResult").setValue(
+					this.byId("idStatusCombatResult").setText(
 						this.getView()
 							.getModel("i18n")
 							.getResourceBundle()
 							.getText("placeholderDraw")
 					);
-				} else if (oData.combatResult > 0) {
-					this.byId("idInputCombatResult").setValueState("Success");
-					this.byId("idInputCombatResult").setValue(
+				}
+
+				else if (oData.combatResult > 0) {
+					// this.byId("idInputCombatResult").setValueState("Success");
+					// this.byId("idInputCombatResult").setValue(
+					// 	this.getView()
+					// 		.getModel("i18n")
+					// 		.getResourceBundle()
+					// 		.getText("placeholderWin") +
+					// 		": +" +
+					// 		oData.combatResult
+					// );
+
+					this.byId("idStatusCombatResult").setState("Success");
+					this.byId("idStatusCombatResult").setText(
 						this.getView()
 							.getModel("i18n")
 							.getResourceBundle()
@@ -42,8 +64,18 @@ sap.ui.define(
 							oData.combatResult
 					);
 				} else {
-					this.byId("idInputCombatResult").setValueState("Error");
-					this.byId("idInputCombatResult").setValue(
+					// this.byId("idInputCombatResult").setValueState("Error");
+					// this.byId("idInputCombatResult").setValue(
+					// 	this.getView()
+					// 		.getModel("i18n")
+					// 		.getResourceBundle()
+					// 		.getText("placeholderLoss") +
+					// 		": " +
+					// 		oData.combatResult
+					// );
+
+					this.byId("idStatusCombatResult").setState("Error");
+					this.byId("idStatusCombatResult").setText(
 						this.getView()
 							.getModel("i18n")
 							.getResourceBundle()
@@ -53,7 +85,8 @@ sap.ui.define(
 					);
 				}
 
-				this.byId("idInputCombatResult").setVisible(true);
+				//this.byId("idInputCombatResult").setVisible(true);
+				this.byId("idStatusCombatResult").setVisible(true);
 
 				if (oData.combatResult !== 0) {
 					this.byId("idPanelCombatResult").setExpanded(false);
@@ -70,41 +103,66 @@ sap.ui.define(
 				var oBreakTestResult = this.calculateBreaktest(oData);
 				switch(oBreakTestResult) {
 					case "Flee":
-						this.byId("idInputBreakTest").setValueState("Error");
-						this.byId("idInputBreakTest").setValue(
+						// this.byId("idInputBreakTest").setValueState("Error");
+						// this.byId("idInputBreakTest").setValue(
+						// 	this.getView()
+						// 		.getModel("i18n")
+						// 		.getResourceBundle()
+						// 		.getText("placeholderFlee")
+						// );
+
+						this.byId("idStatusBreakTest").setState("Error");
+						this.byId("idStatusBreakTest").setText(
 							this.getView()
 								.getModel("i18n")
 								.getResourceBundle()
 								.getText("placeholderFlee")
 						);
-						this.byId("idInputBreakTest").setVisible(true);
 						break;
 
 					case "FBiGO":
-						this.byId("idInputBreakTest").setValueState("Warning");
-						this.byId("idInputBreakTest").setValue(
+						// this.byId("idInputBreakTest").setValueState("Warning");
+						// this.byId("idInputBreakTest").setValue(
+						// 	this.getView()
+						// 		.getModel("i18n")
+						// 		.getResourceBundle()
+						// 		.getText("placeholderFallBack")
+						// );
+
+						this.byId("idStatusBreakTest").setState("Warning");
+						this.byId("idStatusBreakTest").setText(
 							this.getView()
 								.getModel("i18n")
 								.getResourceBundle()
 								.getText("placeholderFallBack")
 						);
-						this.byId("idInputBreakTest").setVisible(true);
 						break;
 					
 					// Give Ground
 					default:
-						
-						this.byId("idInputBreakTest").setValueState(
+						// this.byId("idInputBreakTest").setValueState(
+						// 	"Information"
+						// );
+						// this.byId("idInputBreakTest").setValue(
+						// 	this.getView()
+						// 		.getModel("i18n")
+						// 		.getResourceBundle()
+						// 		.getText("placeholderGiveGround")
+						// );
+
+						this.byId("idStatusBreakTest").setState(
 							"Information"
 						);
-						this.byId("idInputBreakTest").setValue(
+						this.byId("idStatusBreakTest").setText(
 							this.getView()
 								.getModel("i18n")
 								.getResourceBundle()
 								.getText("placeholderGiveGround")
 						);
-						this.byId("idInputBreakTest").setVisible(true);
+						
 				}
+
+				this.byId("idStatusBreakTest").setVisible(true);
 			},
 
 			onPanelCombatResultExpand(oEvent) {
