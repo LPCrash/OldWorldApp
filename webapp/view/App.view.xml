@@ -139,14 +139,18 @@
                             label="{i18n>highGround}"
                         >
                             <Switch
+                                id="idSwitchHighGroundAttacker"
                                 customTextOn="J"
                                 customTextOff="N"
                                 state="{/highGroundAttacker}"
+                                change="onSwitchHighGroundPressed"
                             />
                             <Switch
+                                id="idSwitchHighGroundDefender"
                                 customTextOn="J"
                                 customTextOff="N"
                                 state="{/highGroundDefender}"
+                                change="onSwitchHighGroundPressed"
                             />
                         </InputListItem>
 
@@ -171,14 +175,18 @@
                             label="{i18n>massedInfantry}"
                         >
                             <Switch
+                                id="idSwitchMassedInfantryAttacker"
                                 customTextOn="J"
                                 customTextOff="N"
                                 state="{/massedInfantryAttacker}"
+                                change="onSwitchInfantryPressed"
                             />
                             <Switch
+                                id="idSwitchMassedInfantryDefender"
                                 customTextOn="J"
                                 customTextOff="N"
                                 state="{/massedInfantryDefender}"
+                                change="onSwitchInfantryPressed"
                             />
                         </InputListItem>
 

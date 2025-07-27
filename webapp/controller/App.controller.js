@@ -36,6 +36,34 @@ sap.ui.define(
 				}
 			},
 
+			onSwitchHighGroundPressed(oEvent) {
+				var oData = this.getView().getModel().getData();
+
+				if(oEvent.getParameter("state")) {
+					if(oEvent.getParameter("id").includes("idSwitchHighGroundAttacker")) {
+						this.byId("idSwitchHighGroundDefender").setState(false);
+					}
+					if(oEvent.getParameter("id").includes("idSwitchHighGroundDefender")) {
+						this.byId("idSwitchHighGroundAttacker").setState(false);
+					}
+				}
+				
+			},
+
+			onSwitchInfantryPressed(oEvent) {
+				var oData = this.getView().getModel().getData();
+
+				if(oEvent.getParameter("state")) {
+					if(oEvent.getParameter("id").includes("idSwitchMassedInfantryAttacker")) {
+						this.byId("idSwitchMassedInfantryDefender").setState(false);
+					}
+					if(oEvent.getParameter("id").includes("idSwitchMassedInfantryDefender")) {
+						this.byId("idSwitchMassedInfantryAttacker").setState(false);
+					}
+				}
+				
+			},
+
 			onListItemPress(oEvent) {
 				// Get List Item pressed
 				// Todo
