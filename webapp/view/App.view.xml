@@ -31,6 +31,8 @@
                         <!-- Unsaved Wounds -->
                         <InputListItem
                             label="{i18n>unsavedWoundsInflicted}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <StepInput
                                 min="0"

@@ -36,6 +36,43 @@ sap.ui.define(
 				}
 			},
 
+			onListItemPress(oEvent) {
+				// Get List Item pressed
+				// Todo
+
+				// Get display texts
+				var oDialogTitle = this.getView().getModel("i18n").getResourceBundle().getText("DialogLinkText");
+				var oDialogLinkUrl = this.getView().getModel("links").getData().unsavedWounds;
+				var oDialogLinkText = this.getView().getModel("i18n").getResourceBundle().getText("unsavedWoundsInflictedLong");
+				
+
+				if (!this.oInfoMessageDialog) {
+					this.oInfoMessageDialog = new sap.m.Dialog({
+						type: sap.m.DialogType.Message,
+						title: oDialogTitle,
+						state: sap.ui.core.ValueState.Information,
+						content: new sap.m.Link({
+							text: oDialogLinkText,
+							icon: "sap-icon://globe",
+							href: oDialogLinkUrl,
+							target: "_blank"
+						}),
+						beginButton: new sap.m.Button({
+							type: sap.m.ButtonType.Emphasized,
+							text: this.getView()
+								.getModel("i18n")
+								.getResourceBundle()
+								.getText("DialogButtonClose"),
+							press: function () {
+								this.oInfoMessageDialog.close();
+							}.bind(this)
+						})
+					});
+				}
+
+				this.oInfoMessageDialog.open();
+			},
+
 			onButtonCalcCombatResultPressed(oEvent) {
 				var oData = this.getView().getModel().getData();
 				this.calculateCombatResult(oData);
