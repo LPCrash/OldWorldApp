@@ -65,38 +65,43 @@ sap.ui.define(
 			},
 
 			onListItemPress(oEvent) {
-				// Get List Item pressed
-				// Todo
-
-				// Get display texts
-				var oDialogTitle = this.getView().getModel("i18n").getResourceBundle().getText("DialogLinkText");
-				var oDialogLinkUrl = this.getView().getModel("links").getData().unsavedWounds;
-				var oDialogLinkText = this.getView().getModel("i18n").getResourceBundle().getText("unsavedWoundsInflictedLong");
+				var oItem = oEvent.getParameter("id");
+				var aDialogCase = this.getView().getModel("links").getData();
+			
+				var oDialogTitle = this.getView().getModel("i18n").getResourceBundle().getText("dialogLinkText");
+				var oDialogLinkUrl = this.getView().getModel("i18n").getResourceBundle().getText("dialogUrlNotFound"); // DialogUrlNotFound
+				var oDialogLinkText = this.getView().getModel("i18n").getResourceBundle().getText("dialogTextNotFound"); // DialogTextNotFound
 				
+				// Search in links.json for id, i18n reference and links and then display it
+				for(var i=0; i<aDialogCase.length; i++) {
+					if(oItem.includes(aDialogCase[i].id)) {
+						oDialogLinkUrl = aDialogCase[i].url;
+						oDialogLinkText = this.getView().getModel("i18n").getResourceBundle().getText(aDialogCase[i].i18n);
+						break;
+					}
+				}				
 
-				if (!this.oInfoMessageDialog) {
-					this.oInfoMessageDialog = new sap.m.Dialog({
-						type: sap.m.DialogType.Message,
-						title: oDialogTitle,
-						state: sap.ui.core.ValueState.Information,
-						content: new sap.m.Link({
-							text: oDialogLinkText,
-							icon: "sap-icon://globe",
-							href: oDialogLinkUrl,
-							target: "_blank"
-						}),
-						beginButton: new sap.m.Button({
-							type: sap.m.ButtonType.Emphasized,
-							text: this.getView()
-								.getModel("i18n")
-								.getResourceBundle()
-								.getText("DialogButtonClose"),
-							press: function () {
-								this.oInfoMessageDialog.close();
-							}.bind(this)
-						})
-					});
-				}
+				this.oInfoMessageDialog = new sap.m.Dialog({
+					type: sap.m.DialogType.Message,
+					title: oDialogTitle,
+					state: sap.ui.core.ValueState.Information,
+					content: new sap.m.Link({
+						text: oDialogLinkText,
+						icon: "sap-icon://globe",
+						href: oDialogLinkUrl,
+						target: "_blank"
+					}),
+					beginButton: new sap.m.Button({
+						type: sap.m.ButtonType.Emphasized,
+						text: this.getView()
+							.getModel("i18n")
+							.getResourceBundle()
+							.getText("dialogButtonClose"),
+						press: function () {
+							this.oInfoMessageDialog.close();
+						}.bind(this)
+					})
+				});
 
 				this.oInfoMessageDialog.open();
 			},
@@ -196,11 +201,9 @@ sap.ui.define(
 				
 				if(oExpend) {
 					this.byId("idPanelBreaktest").setExpanded(false);
-					// this.byId("idTextCombatResultHeader").setVisible(true);
 				}
 				else {
 					this.byId("idPanelBreaktest").setExpanded(true);
-					// this.byId("idTextCombatResultHeader").setVisible(false);
 				}
 
 			},
@@ -210,11 +213,9 @@ sap.ui.define(
 				
 				if(!oExpend) {
 					this.byId("idPanelCombatResult").setExpanded(true);
-					// this.byId("idTextCombatResultHeader").setVisible(false);
 				}
 				else {
 					this.byId("idPanelCombatResult").setExpanded(false);
-					// this.byId("idTextCombatResultHeader").setVisible(true);
 				}
 
 			},
@@ -234,7 +235,6 @@ sap.ui.define(
 
 				// Show Starting Panels
 				this.byId("idPanelCombatResult").setExpanded(true);
-				//this.byId("idTextCombatResultHeader").setVisible(true);
 				this.byId("idPanelBreaktest").setExpanded(false);
 			},
 
@@ -320,7 +320,6 @@ sap.ui.define(
 				) {
 					oData.massedInfantryDiff = -1;
 				}
-
 
 				// Others
 				oData.othersDiff = oData.othersAttacker - oData.othersDefender;

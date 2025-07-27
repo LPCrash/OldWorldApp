@@ -20,6 +20,7 @@
                     </OverflowToolbar>
                 </headerToolbar>
 
+                <!-- Combat Result List -->
                 <content>
                     <List id="idListCombatResult">
                         <InputListItem>
@@ -30,6 +31,7 @@
 
                         <!-- Unsaved Wounds -->
                         <InputListItem
+                            id="idUnsavedWounds"
                             label="{i18n>unsavedWoundsInflicted}"
                             type="Active"
                             press="onListItemPress"
@@ -52,7 +54,10 @@
 
                         <!-- Rank Bonus -->
                         <InputListItem
+                            id="idRankBonus"
                             label="{i18n>rankBonus}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <StepInput
                                 min="0"
@@ -72,7 +77,10 @@
 
                         <!-- Standard -->
                         <InputListItem
+                            id="idStandard"
                             label="{i18n>standard}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Switch
                                 customTextOn="J"
@@ -88,7 +96,10 @@
 
                         <!-- Battle Standard -->
                         <InputListItem
+                            id="idBattleStandard"
                             label="{i18n>battleStandard}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Switch
                                 customTextOn="J"
@@ -104,7 +115,10 @@
 
                         <!-- Flank Attack -->
                         <InputListItem
+                            id="idFlankAttack"
                             label="{i18n>flankAttack}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Switch
                                 customTextOn="J"
@@ -120,7 +134,10 @@
 
                         <!-- Rear Attack -->
                         <InputListItem
+                            id="idRearAttack"
                             label="{i18n>rearAttack}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Switch
                                 customTextOn="J"
@@ -136,7 +153,10 @@
 
                         <!-- High Ground -->
                         <InputListItem
+                            id="idHighGround"
                             label="{i18n>highGround}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Switch
                                 id="idSwitchHighGroundAttacker"
@@ -156,7 +176,10 @@
 
                         <!-- Close Order with Unit Strengh 10+-->
                         <InputListItem
+                            id="idCloseOrder"
                             label="{i18n>closeOrder}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Switch
                                 customTextOn="J"
@@ -172,7 +195,10 @@
 
                         <!-- Massed Infantry -->
                         <InputListItem
+                            id="idMassedInfantry"
                             label="{i18n>massedInfantry}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Switch
                                 id="idSwitchMassedInfantryAttacker"
@@ -192,7 +218,10 @@
 
                         <!-- Overkill -->
                         <InputListItem
+                            id="idOverkill"
                             label="{i18n>overkill}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <StepInput
                                 min="0"
@@ -210,9 +239,12 @@
                             />
                         </InputListItem>
 
-                        <!-- Other -->
+                        <!-- Others -->
                         <InputListItem
+                            id="idOthers"
                             label="{i18n>others}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <StepInput
                                 min="0"
@@ -231,23 +263,21 @@
                         </InputListItem>
 
                         <!-- Button Calc -->
-                        <InputListItem label="{i18n>labelCalcCombatResult}">
+                        <InputListItem
+                            id="idCalculateCombatResult"
+                            label="{i18n>labelCalcCombatResult}"
+                            type="Active"
+                            press="onListItemPress"
+                        >
                            <Button
                                 id="idButtonCalcCombatResult"
-                                text="{i18n>ButtonCalcCombat}"
+                                text="{i18n>buttonCalcCombat}"
                                 type="Emphasized"
                                 icon="sap-icon://simulate"
                                 press="onButtonCalcCombatResultPressed"
                             />
                         </InputListItem>
                     </List>
-
-                    <Input
-                        id="idInputCombatResult"
-                        visible="false"
-                        valueState="None"
-                        width="100%"
-                    /> 
                 </content>
             </Panel>
 
@@ -262,11 +292,15 @@
                         <ToolbarSpacer />
                     </OverflowToolbar>
                 </headerToolbar>
+
+                <!-- Breaktest List -->
                 <content>
-                    <!-- Breaktest List -->
                     <List id="idListBreaktest">
                         <InputListItem
+                            id="idLeadership"
                             label="{i18n>leadershipLoser}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <StepInput
                                 min="0"
@@ -277,7 +311,10 @@
 
                         <!-- Dice Roll -->
                         <InputListItem
+                            id="idBreakTest"
                             label="{i18n>breaktestNaturalDiceroll}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <StepInput
                                 min="0"
@@ -288,7 +325,10 @@
 
                         <!-- Unbreakable -->
                         <InputListItem
+                            id="idUnbreakable"
                             label="{i18n>unbreakable}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Switch
                                 customTextOn="J"
@@ -299,7 +339,10 @@
 
                         <!-- Stubborn -->
                         <InputListItem
+                            id="idStubborn"
                             label="{i18n>stubborn}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Switch
                                 customTextOn="J"
@@ -310,7 +353,10 @@
 
                         <!-- Button Calc -->
                         <InputListItem
+                            id="idCalculateBreakTest"
                             label="{i18n>labelCalcBreaktest}"
+                            type="Active"
+                            press="onListItemPress"
                         >
                             <Button
                                 id="idButtonCalcBreakTest"
@@ -321,13 +367,6 @@
                             />
                         </InputListItem>
                     </List>
-
-                    <Input
-                        id="idInputBreakTest"
-                        visible="false"
-                        valueState="None"
-                        width="100%"
-                    />
                 </content>
             </Panel>
             <footer>

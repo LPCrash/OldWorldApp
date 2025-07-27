@@ -1,12 +1,93 @@
-{
-    "combatResultTable":    "https://tow.whfb.app/the-combat-phase/combat-result-table",
-    "unsavedWounds":        "https://tow.whfb.app/the-combat-phase/unsaved-wounds-inflicted",
-    "rankBonus":            "https://tow.whfb.app/the-combat-phase/rank-bonus",
-    "standards":            "https://tow.whfb.app/the-combat-phase/standards",
-    "flankRearAttacks":     "https://tow.whfb.app/the-combat-phase/flank-and-rear-attacks",
-    "highGround":           "https://tow.whfb.app/the-combat-phase/the-high-ground",
-    "overkill":             "https://tow.whfb.app/the-combat-phase/overkill-combat",
-    "other":                "https://tow.whfb.app/the-combat-phase/other-bonuses",
-    "massedInfantry":       "https://tow.whfb.app/troop-types-in-detail/massed-infantry",
-    "stubborn":             "https://tow.whfb.app/special-rules/stubborn"
-}
+[
+    {
+        "id":   "idCombatResultTable",
+        "url":  "https://tow.whfb.app/the-combat-phase/combat-result-table",
+        "i18n": "todo"
+    },
+    {
+        "id":   "idCalculateCombatResult",
+        "url":  "https://tow.whfb.app/the-combat-phase/calculate-combat-result",
+        "i18n": "buttonCalcCombat"        
+    },
+    {
+        "id":   "idUnsavedWounds",
+        "url":  "https://tow.whfb.app/the-combat-phase/unsaved-wounds-inflicted",
+        "i18n": "dialogUnsavedWounds"        
+    },
+    {
+        "id":   "idRankBonus",
+        "url":  "https://tow.whfb.app/the-combat-phase/rank-bonus",
+        "i18n": "rankBonus"
+    },
+    {
+        "id":   "idStandard",
+        "url":  "https://tow.whfb.app/the-combat-phase/standards#standard",
+        "i18n": "standard"
+    },
+    {
+        "id":   "idBattleStandard",
+        "url":  "https://tow.whfb.app/the-combat-phase/standards#the-battle-standard",
+        "i18n": "battleStandard"
+    },
+    {
+        "id":   "idFlankAttack",
+        "url":  "https://tow.whfb.app/the-combat-phase/flank-and-rear-attacks#flank-attack",
+        "i18n": "flankAttack"
+    },
+    {
+        "id":   "idRearAttack",
+        "url":  "https://tow.whfb.app/the-combat-phase/flank-and-rear-attacks#rear-attack",
+        "i18n": "rearAttack"
+    },
+    {
+        "id":   "idHighGround",
+        "url":  "https://tow.whfb.app/the-combat-phase/the-high-ground",
+        "i18n": "highGround"
+    },
+    {
+        "id":   "idCloseOrder",
+        "url":  "https://tow.whfb.app/forming-units/combat-order-close-order",
+        "i18n": "closeOrder"
+    },
+    {
+        "id":   "idMassedInfantry",
+        "url":  "https://tow.whfb.app/troop-types-in-detail/massed-infantry",
+        "i18n": "massedInfantry"
+    },
+    {
+        "id":   "idOverkill",
+        "url":  "https://tow.whfb.app/the-combat-phase/overkill-combat",
+        "i18n": "overkill"
+    },
+    {
+        "id":   "idOthers",
+        "url":  "https://tow.whfb.app/the-combat-phase/other-bonuses",
+        "i18n": "others"
+    },
+    {
+        "id":   "idLeadership",
+        "url":  "https://tow.whfb.app/model-profiles/leadership",
+        "i18n": "dialogLeadership"
+    },
+    {
+        "id":   "idBreakTest",
+        "url":  "https://tow.whfb.app/the-combat-phase/break-test",
+        "i18n": "dialogBreakTest"
+    },
+    {
+        "id":   "idUnbreakable",
+        "url":  "https://tow.whfb.app/special-rules/unbreakable",
+        "i18n": "unbreakable"
+    },
+    {
+        "id":   "idStubborn",
+        "url": "https://tow.whfb.app/special-rules/stubborn",
+        "i18n": "stubborn"
+    },
+    {
+        "id":   "idCalculateBreakTest",
+        "url":  "https://tow.whfb.app/the-combat-phase/break-test",
+        "i18n": "dialogBreakTest"
+    }
+
+]
