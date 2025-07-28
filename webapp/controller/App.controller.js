@@ -221,6 +221,7 @@ sap.ui.define(
 			},
 
 			onButtonClearPressed(oEvent) {
+				// Reload Emtpy Data Model
 				var oModel = new JSONModel("./model/data.json");
 				this.getView().setModel(oModel);
 

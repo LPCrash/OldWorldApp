@@ -7,16 +7,21 @@
 >
     <App id="app">
         <Page title="{i18n>pageTitel}">
-            <Panel id="idPanelCombatResult"  expandable="true" expanded="true" width="auto" 
-                expand="onPanelCombatResultExpand">
+            <Panel
+                id="idPanelCombatResult"
+                expandable="true"
+                expanded="true"
+                width="auto"
+                expand="onPanelCombatResultExpand"
+                class="sapUiResponsiveMargin"
+            >
                 <headerToolbar>
                     <OverflowToolbar
                         active="true"
                         press="onOverflowToolbarCombatResultPress"
                     >
-                        <Text text="{i18n>headerToolbarTitle}"/>
+                        <Text text="{i18n>headerToolbarTitle}" />
                         <ToolbarSpacer />
-                        
                     </OverflowToolbar>
                 </headerToolbar>
 
@@ -24,9 +29,7 @@
                 <content>
                     <List id="idListCombatResult">
                         <InputListItem>
-                            <Text
-                                text="{i18n>textAtt} | {i18n>textDef}"
-                            />
+                            <Text text="{i18n>textAtt} | {i18n>textDef}" />
                         </InputListItem>
 
                         <!-- Unsaved Wounds -->
@@ -269,7 +272,7 @@
                             type="Active"
                             press="onListItemPress"
                         >
-                           <Button
+                            <Button
                                 id="idButtonCalcCombatResult"
                                 text="{i18n>buttonCalcCombat}"
                                 type="Emphasized"
@@ -281,8 +284,13 @@
                 </content>
             </Panel>
 
-            <Panel id="idPanelBreaktest" expandable="true" width="auto"
-                expand="onPanelBreakTestExpand">
+            <Panel
+                id="idPanelBreaktest"
+                expandable="true"
+                width="auto"
+                expand="onPanelBreakTestExpand"
+                class="sapUiResponsiveMargin"
+            >
                 <headerToolbar>
                     <OverflowToolbar
                         active="true"
@@ -383,6 +391,7 @@
                     </List>
                 </content>
             </Panel>
+
             <footer>
                 <OverflowToolbar>
                     <ObjectStatus
