@@ -85,6 +85,11 @@
         "i18n": "stubborn"
     },
     {
+        "id":   "idOutnumber",
+        "url":  "https://tow.whfb.app/the-combat-phase/loser-falls-back-in-good-order",
+        "i18n": "dialogOutnumber"
+    },
+    {
         "id":   "idCalculateBreakTest",
         "url":  "https://tow.whfb.app/the-combat-phase/break-test",
         "i18n": "dialogBreakTest"

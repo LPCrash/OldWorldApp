@@ -49,5 +49,6 @@
 	"breaktestNaturalDiceroll": 0,
 	"breaktestModifiedDiceroll": 0,
 	"unbreakable": false,
-	"stubborn": false
+	"stubborn": false,
+	"outnumber": false
 }

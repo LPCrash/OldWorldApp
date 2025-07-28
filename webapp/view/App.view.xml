@@ -351,6 +351,20 @@
                             />
                         </InputListItem>
 
+                        <!-- Outnumber -->
+                        <InputListItem
+                            id="idOutnumber"
+                            label="{i18n>outnumber}"
+                            type="Active"
+                            press="onListItemPress"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/outnumber}"
+                            />
+                        </InputListItem>
+
                         <!-- Button Calc -->
                         <InputListItem
                             id="idCalculateBreakTest"

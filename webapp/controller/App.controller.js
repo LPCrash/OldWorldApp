@@ -250,7 +250,6 @@ sap.ui.define(
 				oData.closeOrderDiff = 0;
 				oData.massedInfantryDiff = 0;
 				oData.othersDiff = 0;
-
 			},
 
 			calculateCombatResult(oData) {
@@ -351,15 +350,17 @@ sap.ui.define(
 					Give:	"GG"
 				};
 
+				if(oData.breaktestNaturalDiceroll < 3)
+					return oBreakTestResult.Give;
+
 				if(oData.unbreakable)
 					return oBreakTestResult.Give;
 
 				if(oData.stubborn)
 					return oBreakTestResult.Fbigo;
 
-				if(oData.breaktestNaturalDiceroll > oData.leadershipLoser &&
-					oData.breaktestNaturalDiceroll > 2 &&
-					!oData.unbreakable) {
+				// Flee
+				if(oData.breaktestNaturalDiceroll > oData.leadershipLoser) {
 						return oBreakTestResult.Flee;
 				}
 				else {
@@ -373,14 +374,18 @@ sap.ui.define(
 					oData.breaktestModifiedDiceroll =
 						oData.breaktestNaturalDiceroll + oCombatResult;
 
+					// FBiGO, can still be outnumbered, then Flee
 					if (
-						oData.breaktestModifiedDiceroll >
-							oData.leadershipLoser &&
-						oData.breaktestNaturalDiceroll > 2 &&
-						!oData.unbreakable
-					)
+						oData.breaktestModifiedDiceroll > oData.leadershipLoser
+					) {
+						if(oData.outnumber) {
+							return oBreakTestResult.Flee;
+						}
+
 						return oBreakTestResult.Fbigo;
+					}
 					
+					// Give Ground
 					else
 						return oBreakTestResult.Give;
 				}
