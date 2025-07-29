@@ -50,6 +50,7 @@
 	"leadershipLoser": 0,
 	"breaktestNaturalDiceroll": 0,
 	"breaktestModifiedDiceroll": 0,
+	"terror": false,
 	"unbreakable": false,
 	"stubborn": false,
 	"outnumber": false

@@ -385,6 +385,10 @@ sap.ui.define(
 					Give: "GG",
 				};
 
+				var oLeadershipLoser = oData.leadershipLoser;
+				if(oData.terror)
+					oLeadershipLoser = oLeadershipLoser - 1;
+				
 				if (oData.breaktestNaturalDiceroll < 3)
 					return oBreakTestResult.Give;
 
@@ -393,7 +397,7 @@ sap.ui.define(
 				if (oData.stubborn) return oBreakTestResult.Fbigo;
 
 				// Flee
-				if (oData.breaktestNaturalDiceroll > oData.leadershipLoser) {
+				if (oData.breaktestNaturalDiceroll > oLeadershipLoser) {
 					return oBreakTestResult.Flee;
 				} else {
 					var oCombatResult = 0;
@@ -408,7 +412,7 @@ sap.ui.define(
 
 					// FBiGO, can still be outnumbered, then Flee
 					if (
-						oData.breaktestModifiedDiceroll > oData.leadershipLoser
+						oData.breaktestModifiedDiceroll > oLeadershipLoser
 					) {
 						if (oData.outnumber) {
 							return oBreakTestResult.Flee;

@@ -336,6 +336,20 @@
                             />
                         </InputListItem>
 
+                        <!-- Terror -->
+                        <InputListItem
+                            id="idTerror"
+                            label="{i18n>terror}"
+                            type="Active"
+                            press="onListItemPress"
+                        >
+                            <Switch
+                                customTextOn="J"
+                                customTextOff="N"
+                                state="{/terror}"
+                            />
+                        </InputListItem>
+
                         <!-- Unbreakable -->
                         <InputListItem
                             id="idUnbreakable"
