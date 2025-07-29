@@ -1,98 +1,117 @@
 [
     {
-        "id":   "idCombatResultTable",
-        "url":  "https://tow.whfb.app/the-combat-phase/combat-result-table",
-        "i18n": "todo"
+        "id":       "idCombatResultTable",
+        "url":      "https://tow.whfb.app/the-combat-phase/combat-result-table",
+        "i18n":     "todo",
+        "short":    ""
     },
     {
-        "id":   "idCalculateCombatResult",
-        "url":  "https://tow.whfb.app/the-combat-phase/calculate-combat-result",
-        "i18n": "buttonCalcCombat"        
+        "id":       "idCalculateCombatResult",
+        "url":      "https://tow.whfb.app/the-combat-phase/calculate-combat-result",
+        "i18n":     "buttonCalcCombat",
+        "short":    "Once every model engaged in the combat has fought, you must determine which side has won that round of combat. If one side has been completely wiped out, the other side is automatically the winner, regardless of the rules that follow."      
     },
     {
-        "id":   "idUnsavedWounds",
-        "url":  "https://tow.whfb.app/the-combat-phase/unsaved-wounds-inflicted",
-        "i18n": "dialogUnsavedWounds"        
+        "id":       "idUnsavedWounds",
+        "url":      "https://tow.whfb.app/the-combat-phase/unsaved-wounds-inflicted",
+        "i18n":     "dialogUnsavedWounds",
+        "short":    "Each side's basic combat result is equal to the number of unsaved wounds it caused during this Combat phase, plus any unsaved wounds a unit caused by shooting if it chose to Stand & Shoot as a charge reaction during this turn. In other words, each Wound the enemy side lost this turn due to a Stand & Shoot charge reaction or during the Combat phase is counted and is worth 1 combat result point."
     },
     {
-        "id":   "idRankBonus",
-        "url":  "https://tow.whfb.app/the-combat-phase/rank-bonus",
-        "i18n": "rankBonus"
+        "id":       "idRankBonus",
+        "url":      "https://tow.whfb.app/the-combat-phase/rank-bonus",
+        "i18n":     "rankBonus",
+        "short":    "Depending upon its formation, and if it is wide enough, a unit can claim a Rank Bonus of +1 for each extra rank behind the first, up to the maximum determined by its troop type. How many models a rank must contain to claim a Rank Bonus, as well as the maximum Rank Bonus a unit can claim, is determined by its troop type."
     },
     {
-        "id":   "idStandard",
-        "url":  "https://tow.whfb.app/the-combat-phase/standards#standard",
-        "i18n": "standard"
+        "id":       "idStandard",
+        "url":      "https://tow.whfb.app/the-combat-phase/standards#standard",
+        "i18n":     "standard",
+        "short":    "If your unit includes a standard bearer, you may claim a bonus of +1 combat result point. Standard bearers are covered in the Command Groups section."
     },
     {
-        "id":   "idBattleStandard",
-        "url":  "https://tow.whfb.app/the-combat-phase/standards#the-battle-standard",
-        "i18n": "battleStandard"
+        "id":       "idBattleStandard",
+        "url":      "https://tow.whfb.app/the-combat-phase/standards#the-battle-standard",
+        "i18n":     "battleStandard",
+        "short":    "If your unit includes a Battle Standard, you may claim an additional bonus of +1 combat result point, cumulative with any bonus for a 'normal' standard. Battle Standards are covered in the Characters section."
     },
     {
-        "id":   "idFlankAttack",
-        "url":  "https://tow.whfb.app/the-combat-phase/flank-and-rear-attacks#flank-attack",
-        "i18n": "flankAttack"
+        "id":       "idFlankAttack",
+        "url":      "https://tow.whfb.app/the-combat-phase/flank-and-rear-attacks#flank-attack",
+        "i18n":     "flankAttack",
+        "short":    "If your unit is engaged with the enemy's flank arc, you may claim a bonus of +1 combat result point."
     },
     {
-        "id":   "idRearAttack",
-        "url":  "https://tow.whfb.app/the-combat-phase/flank-and-rear-attacks#rear-attack",
-        "i18n": "rearAttack"
+        "id":       "idRearAttack",
+        "url":      "https://tow.whfb.app/the-combat-phase/flank-and-rear-attacks#rear-attack",
+        "i18n":     "rearAttack",
+        "short":    "If your unit is engaged with the enemy's rear arc, you may claim a bonus of +2 combat result points."
     },
     {
-        "id":   "idHighGround",
-        "url":  "https://tow.whfb.app/the-combat-phase/the-high-ground",
-        "i18n": "highGround"
+        "id":       "idHighGround",
+        "url":      "https://tow.whfb.app/the-combat-phase/the-high-ground",
+        "i18n":     "highGround",
+        "short":    "If the fighting rank of your unit occupies a higher position than that of the enemy, for example, your unit is fighting along the crest of a hill, you may claim a bonus of +1 combat result point."
     },
     {
-        "id":   "idCloseOrder",
-        "url":  "https://tow.whfb.app/forming-units/combat-order-close-order",
-        "i18n": "closeOrder"
+        "id":       "idCloseOrder",
+        "url":      "https://tow.whfb.app/forming-units/combat-order-close-order",
+        "i18n":     "closeOrder",
+        "short":    "Whilst in Combat Order, a Close Order formation with a Unit Strength of 10 or more may claim a bonus of +1 combat result point."
     },
     {
-        "id":   "idMassedInfantry",
-        "url":  "https://tow.whfb.app/troop-types-in-detail/massed-infantry",
-        "i18n": "massedInfantry"
+        "id":       "idMassedInfantry",
+        "url":      "https://tow.whfb.app/troop-types-in-detail/massed-infantry",
+        "i18n":     "massedInfantry",
+        "short":    "Numbers alone can sometimes overcome the foe. When determining combat results, if one side has a higher Unit Strength than the other and includes one or more units with this rule, that side may claim a bonus of +1 combat result point."
     },
     {
-        "id":   "idOverkill",
-        "url":  "https://tow.whfb.app/the-combat-phase/overkill-combat",
-        "i18n": "overkill"
+        "id":       "idOverkill",
+        "url":      "https://tow.whfb.app/the-combat-phase/overkill-combat",
+        "i18n":     "overkill",
+        "short":    "If a character fighting in a challenge kills their opponent and causes more unsaved wounds than their opponent has Wounds remaining, then for each excess wound you may claim a bonus of +1 combat result point, up to a maximum of +5."
     },
     {
-        "id":   "idOthers",
-        "url":  "https://tow.whfb.app/the-combat-phase/other-bonuses",
-        "i18n": "others"
+        "id":       "idOthers",
+        "url":      "https://tow.whfb.app/the-combat-phase/other-bonuses",
+        "i18n":     "others",
+        "short":    "Many special rules confer additional bonus combat result points. For example, a Close Order formation that is in Combat Order may claim a bonus of +1 combat result point. Any special rules that confer such bonuses will detail the criteria that must be met and how many bonus combat result points can be claimed."
     },
     {
-        "id":   "idLeadership",
-        "url":  "https://tow.whfb.app/model-profiles/leadership",
-        "i18n": "dialogLeadership"
+        "id":       "idLeadership",
+        "url":      "https://tow.whfb.app/model-profiles/leadership",
+        "i18n":     "dialogLeadership",
+        "short":    "Leadership shows how courageous, determined and self-controlled a model is. A creature with a low Leadership characteristic is very unruly or cowardly, to say the least!"
     },
     {
-        "id":   "idBreakTest",
-        "url":  "https://tow.whfb.app/the-combat-phase/break-test",
-        "i18n": "dialogBreakTest"
+        "id":       "idBreakTest",
+        "url":      "https://tow.whfb.app/the-combat-phase/break-test",
+        "i18n":     "dialogBreakTest",
+        "short":    "Unless the combat is a draw, each unit belonging to the losing side must make a 'Break' test. To make a Break test, roll 2D6 and modify the result by adding the difference between the winner's and the loser's combat result scores."
     },
     {
-        "id":   "idUnbreakable",
-        "url":  "https://tow.whfb.app/special-rules/unbreakable",
-        "i18n": "unbreakable"
+        "id":       "idUnbreakable",
+        "url":      "https://tow.whfb.app/special-rules/unbreakable",
+        "i18n":     "unbreakable",
+        "short":    "If a unit with this special rule loses a round of combat, it is not required to make a Break test. Instead, it will automatically Give Ground as it is pushed back by the enemy. Characters that are not Unbreakable cannot join units that are, and vice versa."
     },
     {
-        "id":   "idStubborn",
-        "url": "https://tow.whfb.app/special-rules/stubborn",
-        "i18n": "stubborn"
+        "id":       "idStubborn",
+        "url":      "https://tow.whfb.app/special-rules/stubborn",
+        "i18n":     "stubborn",
+        "short":    "The first time this unit is required to make a Break test it may choose not to and will automatically Falling Back in Good Order instead, even if the Unit Strength of the winning side is more than twice that of the losing side. A unit that is not Stubborn does not become Stubborn when joined by a character that is. A Stubborn character cannot use this special rule whilst part of a unit that is not Stubborn."
     },
     {
-        "id":   "idOutnumber",
-        "url":  "https://tow.whfb.app/the-combat-phase/loser-falls-back-in-good-order",
-        "i18n": "dialogOutnumber"
+        "id":       "idOutnumber",
+        "url":      "https://tow.whfb.app/the-combat-phase/loser-falls-back-in-good-order",
+        "i18n":     "dialogOutnumber",
+        "short":    "The losing unit Falls Back in Good Order, moving directly away from the winning unit with the highest Unit Strength. If two enemy units have the same Unit Strength, randomly determine which the unit flees from. However, if the winning side significantly outnumbers the losing side, it will overwhelm the loser. If the Unit Strength of the winning side is more than twice that of the losing side, any losing unit that rolled this result when making its Break test will Break instead."
     },
     {
-        "id":   "idCalculateBreakTest",
-        "url":  "https://tow.whfb.app/the-combat-phase/break-test",
-        "i18n": "dialogBreakTest"
+        "id":       "idCalculateBreakTest",
+        "url":      "https://tow.whfb.app/the-combat-phase/break-test",
+        "i18n":     "dialogBreakTest",
+        "short":    "If the result of the natural roll is higher than the unit's Leadership, the unit 'Breaks' and flees. If the result of the natural roll is equal to or lower than the unit's Leadership, but the modified result is higher than the unit's Leadership, the unit Falls Back in Good Order. If the modified result is equal to or lower than the unit's Leadership, or if the roll is a natural double 1, the unit Gives Ground."
     }
 
 ]

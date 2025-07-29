@@ -7,6 +7,10 @@
 >
     <App id="app">
         <Page title="{i18n>pageTitel}">
+            <headerContent>
+    			<Text text="{i18n>rules}: {/warhammerVersion}" renderWhitespace="true" />
+    		</headerContent>
+            <content>
             <Panel
                 id="idPanelCombatResult"
                 expandable="true"
@@ -21,7 +25,6 @@
                         press="onOverflowToolbarCombatResultPress"
                     >
                         <Text text="{i18n>headerToolbarTitle}" />
-                        <ToolbarSpacer />
                     </OverflowToolbar>
                 </headerToolbar>
 
@@ -228,6 +231,7 @@
                         >
                             <StepInput
                                 min="0"
+                                max="5"
                                 width="120px"
                                 value="{/overkillAttacker}"
                             />
@@ -237,6 +241,7 @@
                             />
                             <StepInput
                                 min="0"
+                                max="5"
                                 width="120px"
                                 value="{/overkillDefender}"
                             />
@@ -391,6 +396,7 @@
                     </List>
                 </content>
             </Panel>
+            </content>
 
             <footer>
                 <OverflowToolbar>

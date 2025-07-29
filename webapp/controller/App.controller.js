@@ -13,11 +13,10 @@ sap.ui.define(
 			onOverflowToolbarCombatResultPress(oEvent) {
 				var oExpend = this.byId("idPanelCombatResult").getExpanded();
 
-				if(oExpend) {
+				if (oExpend) {
 					this.byId("idPanelCombatResult").setExpanded(false);
 					this.byId("idPanelBreaktest").setExpanded(true);
-				}
-				else {
+				} else {
 					this.byId("idPanelCombatResult").setExpanded(true);
 					this.byId("idPanelBreaktest").setExpanded(false);
 				}
@@ -26,11 +25,10 @@ sap.ui.define(
 			onOverflowToolbarBreaktestPress(oEvent) {
 				var oExpend = this.byId("idPanelBreaktest").getExpanded();
 
-				if(oExpend) {
+				if (oExpend) {
 					this.byId("idPanelCombatResult").setExpanded(true);
 					this.byId("idPanelBreaktest").setExpanded(false);
-				}
-				else {
+				} else {
 					this.byId("idPanelCombatResult").setExpanded(false);
 					this.byId("idPanelBreaktest").setExpanded(true);
 				}
@@ -39,59 +37,98 @@ sap.ui.define(
 			onSwitchHighGroundPressed(oEvent) {
 				var oData = this.getView().getModel().getData();
 
-				if(oEvent.getParameter("state")) {
-					if(oEvent.getParameter("id").includes("idSwitchHighGroundAttacker")) {
+				if (oEvent.getParameter("state")) {
+					if (
+						oEvent
+							.getParameter("id")
+							.includes("idSwitchHighGroundAttacker")
+					) {
 						this.byId("idSwitchHighGroundDefender").setState(false);
 					}
-					if(oEvent.getParameter("id").includes("idSwitchHighGroundDefender")) {
+					if (
+						oEvent
+							.getParameter("id")
+							.includes("idSwitchHighGroundDefender")
+					) {
 						this.byId("idSwitchHighGroundAttacker").setState(false);
 					}
 				}
-				
 			},
 
 			onSwitchInfantryPressed(oEvent) {
 				var oData = this.getView().getModel().getData();
 
-				if(oEvent.getParameter("state")) {
-					if(oEvent.getParameter("id").includes("idSwitchMassedInfantryAttacker")) {
-						this.byId("idSwitchMassedInfantryDefender").setState(false);
+				if (oEvent.getParameter("state")) {
+					if (
+						oEvent
+							.getParameter("id")
+							.includes("idSwitchMassedInfantryAttacker")
+					) {
+						this.byId("idSwitchMassedInfantryDefender").setState(
+							false
+						);
 					}
-					if(oEvent.getParameter("id").includes("idSwitchMassedInfantryDefender")) {
-						this.byId("idSwitchMassedInfantryAttacker").setState(false);
+					if (
+						oEvent
+							.getParameter("id")
+							.includes("idSwitchMassedInfantryDefender")
+					) {
+						this.byId("idSwitchMassedInfantryAttacker").setState(
+							false
+						);
 					}
 				}
-				
 			},
 
 			onListItemPress(oEvent) {
 				var oItem = oEvent.getParameter("id");
 				var aDialogCase = this.getView().getModel("links").getData();
-			
-				var oDialogTitle = this.getView().getModel("i18n").getResourceBundle().getText("dialogLinkText");
-				var oDialogLinkUrl = this.getView().getModel("i18n").getResourceBundle().getText("dialogUrlNotFound"); // DialogUrlNotFound
-				var oDialogLinkText = this.getView().getModel("i18n").getResourceBundle().getText("dialogTextNotFound"); // DialogTextNotFound
-				
+
+				var oDialogLinkText = this.getView()
+					.getModel("i18n")
+					.getResourceBundle()
+					.getText("dialogLinkText");
+				var oDialogLinkUrl = this.getView()
+					.getModel("i18n")
+					.getResourceBundle()
+					.getText("dialogUrlNotFound"); // DialogUrlNotFound
+				var oDialogI18nRef = this.getView()
+					.getModel("i18n")
+					.getResourceBundle()
+					.getText("dialogTextNotFound"); // DialogTextNotFound
+				var oDialogLinkShort = "";
+
 				// Search in links.json for id, i18n reference and links and then display it
-				for(var i=0; i<aDialogCase.length; i++) {
-					if(oItem.includes(aDialogCase[i].id)) {
+				for (var i = 0; i < aDialogCase.length; i++) {
+					if (oItem.includes(aDialogCase[i].id)) {
 						oDialogLinkUrl = aDialogCase[i].url;
-						oDialogLinkText = this.getView().getModel("i18n").getResourceBundle().getText(aDialogCase[i].i18n);
+						oDialogI18nRef = this.getView()
+							.getModel("i18n")
+							.getResourceBundle()
+							.getText(aDialogCase[i].i18n);
+						oDialogLinkShort = aDialogCase[i].short;
 						break;
 					}
-				}				
+				}
 
 				this.oInfoMessageDialog = new sap.m.Dialog({
 					type: sap.m.DialogType.Message,
-					title: oDialogTitle,
+					title: oDialogI18nRef,
 					state: sap.ui.core.ValueState.Information,
-					content: new sap.m.Link({
+					content: [
+						new sap.m.Text({
+							text: oDialogLinkShort,
+						}),
+					],
+					beginButton: new sap.m.Button({
+						type: sap.m.ButtonType.Emphasized,
 						text: oDialogLinkText,
 						icon: "sap-icon://globe",
-						href: oDialogLinkUrl,
-						target: "_blank"
+						press: function () {
+							sap.m.URLHelper.redirect(oDialogLinkUrl, true);
+						}.bind(this),
 					}),
-					beginButton: new sap.m.Button({
+					endButton: new sap.m.Button({
 						type: sap.m.ButtonType.Emphasized,
 						text: this.getView()
 							.getModel("i18n")
@@ -99,8 +136,8 @@ sap.ui.define(
 							.getText("dialogButtonClose"),
 						press: function () {
 							this.oInfoMessageDialog.close();
-						}.bind(this)
-					})
+						}.bind(this),
+					}),
 				});
 
 				this.oInfoMessageDialog.open();
@@ -111,18 +148,14 @@ sap.ui.define(
 				this.calculateCombatResult(oData);
 
 				if (oData.combatResult === 0) {
-					this.byId("idStatusCombatResult").setState(
-						"Information"
-					);
+					this.byId("idStatusCombatResult").setState("Information");
 					this.byId("idStatusCombatResult").setText(
 						this.getView()
 							.getModel("i18n")
 							.getResourceBundle()
 							.getText("placeholderDraw")
 					);
-				}
-
-				else if (oData.combatResult > 0) {
+				} else if (oData.combatResult > 0) {
 					this.byId("idStatusCombatResult").setState("Success");
 					this.byId("idStatusCombatResult").setText(
 						this.getView()
@@ -159,7 +192,7 @@ sap.ui.define(
 				oData.breaktestModifiedDiceroll = 0;
 
 				var oBreakTestResult = this.calculateBreaktest(oData);
-				switch(oBreakTestResult) {
+				switch (oBreakTestResult) {
 					case "Flee":
 						this.byId("idStatusBreakTest").setState("Error");
 						this.byId("idStatusBreakTest").setText(
@@ -179,12 +212,10 @@ sap.ui.define(
 								.getText("placeholderFallBack")
 						);
 						break;
-					
+
 					// Give Ground
 					default:
-						this.byId("idStatusBreakTest").setState(
-							"Information"
-						);
+						this.byId("idStatusBreakTest").setState("Information");
 						this.byId("idStatusBreakTest").setText(
 							this.getView()
 								.getModel("i18n")
@@ -198,26 +229,22 @@ sap.ui.define(
 
 			onPanelCombatResultExpand(oEvent) {
 				var oExpend = oEvent.getParameter("expand");
-				
-				if(oExpend) {
+
+				if (oExpend) {
 					this.byId("idPanelBreaktest").setExpanded(false);
-				}
-				else {
+				} else {
 					this.byId("idPanelBreaktest").setExpanded(true);
 				}
-
 			},
 
 			onPanelBreakTestExpand(oEvent) {
 				var oExpend = oEvent.getParameter("expand");
-				
-				if(!oExpend) {
+
+				if (!oExpend) {
 					this.byId("idPanelCombatResult").setExpanded(true);
-				}
-				else {
+				} else {
 					this.byId("idPanelCombatResult").setExpanded(false);
 				}
-
 			},
 
 			onButtonClearPressed(oEvent) {
@@ -256,13 +283,14 @@ sap.ui.define(
 			calculateCombatResult(oData) {
 				this.resetDiffCalculation(oData);
 
+				// Wounds
 				oData.unsavedWoundsDiff =
 					oData.unsavedWoundsAttacker - oData.unsavedWoundsDefender;
+
+				// Rank Bonus
 				oData.rankBonusDiff =
 					oData.rankBonusAttacker - oData.rankBonusDefender;
-				oData.overkillDiff =
-					oData.overkillAttacker - oData.overkillDefender;
-
+				
 				// Standard
 				if (oData.standardAttacker > oData.standardDefender) {
 					oData.standardDiff = 1;
@@ -309,17 +337,23 @@ sap.ui.define(
 				} else if (
 					oData.closeOrderAttacker < oData.closeOrderDefender
 				) {
-					oData.othersDiff = -1;
+					oData.closeOrderDiff = -1;
 				}
 
 				// Massed Infantry
-				if (oData.massedInfantryAttacker > oData.massedInfantryDefender) {
+				if (
+					oData.massedInfantryAttacker > oData.massedInfantryDefender
+				) {
 					oData.massedInfantryDiff = 1;
 				} else if (
 					oData.massedInfantryAttacker < oData.massedInfantryDefender
 				) {
 					oData.massedInfantryDiff = -1;
 				}
+
+				// Overkill
+				oData.overkillDiff =
+					oData.overkillAttacker - oData.overkillDefender;
 
 				// Others
 				oData.othersDiff = oData.othersAttacker - oData.othersDefender;
@@ -333,9 +367,9 @@ sap.ui.define(
 					oData.flankDiff +
 					oData.rearDiff +
 					oData.highGroundDiff +
-					oData.overkillDiff +
 					oData.closeOrderDiff +
 					oData.massedInfantryDiff +
+					oData.overkillDiff +
 					oData.othersDiff;
 			},
 
@@ -346,25 +380,22 @@ sap.ui.define(
 				// If the modified result is equal to or lower than the unit's Leadership,
 				// or if the roll is a natural double 1, the unit Gives Ground.
 				var oBreakTestResult = {
-					Flee: 	"Flee",
-					Fbigo:	"FBiGO",
-					Give:	"GG"
+					Flee: "Flee",
+					Fbigo: "FBiGO",
+					Give: "GG",
 				};
 
-				if(oData.breaktestNaturalDiceroll < 3)
+				if (oData.breaktestNaturalDiceroll < 3)
 					return oBreakTestResult.Give;
 
-				if(oData.unbreakable)
-					return oBreakTestResult.Give;
+				if (oData.unbreakable) return oBreakTestResult.Give;
 
-				if(oData.stubborn)
-					return oBreakTestResult.Fbigo;
+				if (oData.stubborn) return oBreakTestResult.Fbigo;
 
 				// Flee
-				if(oData.breaktestNaturalDiceroll > oData.leadershipLoser) {
-						return oBreakTestResult.Flee;
-				}
-				else {
+				if (oData.breaktestNaturalDiceroll > oData.leadershipLoser) {
+					return oBreakTestResult.Flee;
+				} else {
 					var oCombatResult = 0;
 
 					if (Math.sign(oData.combatResult) == 1)
@@ -379,18 +410,17 @@ sap.ui.define(
 					if (
 						oData.breaktestModifiedDiceroll > oData.leadershipLoser
 					) {
-						if(oData.outnumber) {
+						if (oData.outnumber) {
 							return oBreakTestResult.Flee;
 						}
 
 						return oBreakTestResult.Fbigo;
 					}
-					
+
 					// Give Ground
-					else
-						return oBreakTestResult.Give;
+					else return oBreakTestResult.Give;
 				}
-			}
+			},
 		});
 	}
 );

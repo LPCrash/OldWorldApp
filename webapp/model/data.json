@@ -1,4 +1,6 @@
 {
+	"warhammerVersion":	"1.5.1",
+	
 	"unsavedWoundsAttacker": 0,
 	"unsavedWoundsDefender": 0,
 	"unsavedWoundsDiff": 0,
